@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>checkout</title>
+    <script defer src="main.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body>
+    <form id="order-form">
+      <div id="personal-data" class="form-section">
+        <h2>Personal data</h2>
+        <div class="input-field-and-label">
+          <label for="full-name"> Full name</label>
+          <input
+            type="text"
+            id="full-name"
+            name="full-name"
+            required
+            data-only-letters
+            title="Input your mail"
+          />
+        </div>
+        <div class="input-field-and-label">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="email@email.com"
+            required
+          />
+        </div>
+        <div class="input-field-and-label">
+          <label for="phone-number">Phone number</label>
+          <input
+            type="tel"
+            id="phone-number"
+            name="phone-number"
+            inputmode="numeric"
+            required
+            data-only-numbers
+          />
+        </div>
+        <div class="input-field-and-label">
+          <label for="address">Address</label>
+          <input type="text" id="address" name="address" required />
+        </div>
+        <div class="input-field-and-label">
+          <label for="house-number">House number</label>
+          <input type="text" id="house-number" name="house-number" required />
+        </div>
+        <div class="input-field-and-label">
+          <label for="city">City/Town</label>
+          <input type="text" name="city" id="city" required />
+        </div>
+        <div class="input-field-and-label">
+          <label for="postcode">Postcode</label>
+          <input type="text" id="postcode" name="postcode" required />
+        </div>
+        <div class="text-area-and-label">
+          <label for="extra-notes" class="optional">Extra notes</label>
+          <textarea name="extra-notes" id="extra-notes" rows="10"></textarea>
+        </div>
+        <button id="btn_next" class="btn">Next</button>
+      </div>
+      <div id="payment-method" class="form-section hide-section">
+        <h2>Payment method</h2>
+        <div class="payment-amount">
+          <p class="label">Payment amount</p>
+          <div class="info">
+            <p class="total">49.99 €</p>
+            <p class="shipping">Free shipping</p>
+          </div>
+        </div>
+        <div class="payment-methods">
+          <p class="label">Chose payment method</p>
+          <button id="cash" class="method" type="button">
+            <div class="method-title">
+              <span class="material-symbols-outlined"> attach_money </span>
+              <p class="method-name">Cash on delivery</p>
+            </div>
+            <p class="method-details">
+              Pay when you get the package and submit your order
+            </p>
+          </button>
+
+          <button id="card" class="method" type="button">
+            <div class="method-title">
+              <span class="material-symbols-outlined"> credit_card </span>
+              <p class="method-name">Card</p>
+            </div>
+            <p class="method-details">Pay now with your card</p>
+          </button>
+        </div>
+        <button type="button" id="btn_back" class="btn">Back</button>
+      </div>
+      <div id="card-data" class="form-section hide-section">
+        <h2>Card data</h2>
+        <div class="payment-amount">
+          <p class="label">Payment amount</p>
+          <div class="info">
+            <p class="total">49.99 €</p>
+            <p class="shipping">Free shipping</p>
+          </div>
+        </div>
+        <div class="input-field-and-label">
+          <label for="card-number" data-no-letters> Card number</label>
+          <input
+            type="text"
+            id="card-number"
+            name="card-number"
+            data-only-numbers=""
+            placeholder="xxxx xxxx xxxx xxxx"
+          />
+        </div>
+        <div class="date-and-cvv">
+          <div class="input-field-and-label">
+            <label for="expiry-date">Expiry date</label>
+            <input
+              type="text"
+              id="expiry-date"
+              name="expiry-date"
+              placeholder="MM / YY"
+              data-no-letters
+            />
+          </div>
+          <div class="input-field-and-label">
+            <label for="security-code">Security code</label>
+            <input
+              type="text"
+              id="security-code"
+              name="security-code"
+              inputmode="numeric"
+              data-no-letters
+            />
+          </div>
+        </div>
+
+        <button type="button" id="btn_pay" class="btn">
+          Pay and submit order
+        </button>
+        <button type="button" id="btn_change-payment-method" class="btn">
+          Change payment method
+        </button>
+      </div>
+      <button id="trigger" hidden></button>
+    </form>
+    <div id="hide-pop-up" class="hide-section">
+      <span class="material-symbols-outlined" id="done-cicle-icon">
+        check_circle
+      </span>
+      <p>Your order has been successfully submitted</p>
+    </div>
+  </body>
+</html>
